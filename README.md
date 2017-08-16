@@ -7,7 +7,7 @@ If running for the first time - run 'npm install' first
 The project runs on the link - 'http://localhost:8080' by default.
 
 External Dependencies -
-1.) courses.json - list of courses with fields - name, univ(university), id, linkName.
+1.) courses.json - list of courses with fields - name, univ(university), id, linkName. <br>
 2.) threads directory - which contains the list of threads of each course in the {coursename}.txt files.
 3.) coursera.db - The database containing the crawled data from coursera discussion forums. refer to 'CourseraScraper' repository.
 

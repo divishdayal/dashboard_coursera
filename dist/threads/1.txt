@@ -1,14 +1,14 @@
-3WgurnblEeepyw5VVxdF_A
-Qz7gLXpHEeeg5xJ1zO60CA
-fFU6cHvKEee4NA4E2ybtTg
-vKGT_XunEeeGiAoHZNTv5g
-3WgurnblEeepyw5VVxdF_A
-bWwqjXoQEeernw7c7NsOvA
-1_-jdXi4EeermQ7_qQB61A
-d-nNKHqbEeeC4QoT_N5XUg
-Aso_Q3l2EeeNaBLiCdZa5A
-jjddknuBEeeC4QoT_N5XUg
-1B3S8nfwEeePWg61IpHpmA
-pFvgPXtkEee1jApzGcQi8A
-A5yRHHtyEeewcQoUHVZbcg
-PBMkxXhKEeemXBI6dCQXDA
+3WgurnblEeepyw5VVxdF_A 0.9
+Qz7gLXpHEeeg5xJ1zO60CA 0.81
+fFU6cHvKEee4NA4E2ybtTg 0.72
+vKGT_XunEeeGiAoHZNTv5g 0.63
+3WgurnblEeepyw5VVxdF_A 0.2
+bWwqjXoQEeernw7c7NsOvA 0.73
+1_-jdXi4EeermQ7_qQB61A 0.77
+d-nNKHqbEeeC4QoT_N5XUg 0.14
+Aso_Q3l2EeeNaBLiCdZa5A 0.56
+jjddknuBEeeC4QoT_N5XUg 0.89
+1B3S8nfwEeePWg61IpHpmA 0.66
+pFvgPXtkEee1jApzGcQi8A 0.48
+A5yRHHtyEeewcQoUHVZbcg 0.32
+PBMkxXhKEeemXBI6dCQXDA 0.98

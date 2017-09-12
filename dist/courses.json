@@ -6,15 +6,15 @@
     "linkName" : "python-text-mining"
   },
   {
-    "name" : "course 2",
+    "name" : "Neural Networks and Deep Learning",
     "id" : 2,
-    "univ" : "univ 2",
-    "linkName" : "python-text-mining"
+    "univ" : "deeplearning.ai",
+    "linkName" : ""
   },
   {
-    "name" : "course 3",
+    "name" : "Machine Learning",
     "id" : 3,
-    "univ" : "univ 3",
+    "univ" : "Stanford University",
     "linkName" : "python-text-mining"
   }
 ]

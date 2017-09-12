@@ -11,9 +11,9 @@ const Pagination = (props) => {
 	}
 	return (
 		<div>
-		<li className={props.currentPage > 1 ? 'waves-effect' : 'disabled'}><Link to={`/course/${props.courseId}/${parseInt(props.currentPage)-1}`}><i className="material-icons">chevron_left</i></Link></li>
+		<li className={props.currentPage > 1 ? 'waves-effect' : 'disabled'}><Link to={props.currentPage >1 ? `/course/${props.courseId}/${parseInt(props.currentPage)-1}` : '#'}><i className="material-icons">chevron_left</i></Link></li>
 		{li_holder}
-		<li className={props.currentPage < props.numberOfPages ? 'waves-effect' : 'disabled'}><Link to={`/course/${props.courseId}/${parseInt(props.currentPage)+1}`}><i className="material-icons">chevron_right</i></Link></li>
+		<li className={props.currentPage < props.numberOfPages ? 'waves-effect' : 'disabled'}><Link to={props.currentPage < props.numberOfPages ? `/course/${props.courseId}/${parseInt(props.currentPage)+1}` : '#'}><i className="material-icons">chevron_right</i></Link></li>
 		</div>
 	);
 }

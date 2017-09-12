@@ -38,22 +38,50 @@ app.get('/api/:id', function(request, response) {
     if (err) {
        return console.error(err);
     }
-    threadIdList = data.toString().split('\n');
-    // if(threadIdList.length>15){
-    //   var thread_start = (request.params.num-1) * 15;
-    //   var thread_end = (request.params.num)*15;
-    //   threadIdList = threadIdList.slice(thread_start,thread_end);
-    // }
+    var scores = [];
+    threadIdList = [];
+    threadList = data.toString().split('\n');
+    threadList.forEach((x) => {
+      var pair = x.split(' ');
+      scores.push(pair[1]);
+      threadIdList.push(pair[0]);
+    })
 
     //getting thread info from database
-    query = 'SELECT lastAnsweredAt, createdAt, title, viewCount, totalAnswerCount FROM thread WHERE threadId IN (\'' + threadIdList.join('\', \'') + '\');';
+    //getting the thread information from the database for that thread and
+    //also getting the first most-recent post of that thread from that database.
+    query = 'SELECT id, threadId, answerBadge, lastAnsweredAt, createdAt, title, viewCount, totalAnswerCount FROM thread WHERE threadId IN (\'' + threadIdList.join('\', \'') + '\');';
     db.all(query, function(err,rows){
       //console.log(rows.length);
       if(err){
         console.log('ERROR while querying database ; ' + err);
         return;
       };
-      response.json(rows);
+      var rows_length = rows.length;
+      var count = 0;
+      rows.forEach((ele) => {
+        
+        ele.score = scores[threadIdList.indexOf(ele.threadId)];
+        //query for most-recent post of the thread
+        db.get('SELECT content from post WHERE forumQuestionId=\'' + ele.id + '\' ORDER BY createdAt DESC;', function(err, row){
+          count++;
+          if(err){
+            console.log('ERROR while querying database ; ' + err);
+            return;
+          };
+          
+          if(row){
+            ele.post = row.content; 
+          }else{
+            ele.post = '';
+          }
+          console.log(count, rows_length);
+          if(count == rows_length)
+             response.json(rows); 
+        })
+        
+      })
+      
     });
 
   });

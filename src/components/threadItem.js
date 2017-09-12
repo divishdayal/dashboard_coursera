@@ -34,8 +34,10 @@ const ThreadItem = (props) => {
 	return(
 		<a href={link_href} target="_blank" className='threadLink'>
 		<div className = 'threadItem grey lighten-4 row'>
-			<span className = 'threadTitle col s10 truncate'>
-				{ props.thread.title }
+			<span className = 'title_text col s9 truncate'>
+				<span className='threadTitle'>{ props.thread.title }</span>
+				<br />
+				{props.thread.post == '' ? null : <span className='post'><i className="material-icons tiny icon">subdirectory_arrow_right</i>{props.thread.post.split(/<.*?>/).join('')}</span>}
 			</span>
 			<span className= 'threadViews col s1'>
 				<b>{props.thread.viewCount}</b> <br/>views
@@ -43,8 +45,10 @@ const ThreadItem = (props) => {
 			<span className= 'threadViews col s1'>
 				<b>{props.thread.totalAnswerCount}</b> <br/> replies
 			</span>
-			<br />
-			<div className='col s12'>
+			<span className= 'threadViews col s1'>
+				<b>{props.thread.score}</b> <br/> score
+			</span>
+			<div className='last_line col s9'>
 				{threadBadge(props)}
 				<span className = 'threadBy'>
 					{moment(props.thread.lastAnsweredAt).isValid() ? 

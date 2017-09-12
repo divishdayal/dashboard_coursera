@@ -1,4 +1,4 @@
-This project is for the dashboard of Coursera - made by WING@NUS for MOOC Intervention Project.
+This project is for the dashboard of MOOC forums for instructors - made by WING@NUS for MOOC Intervention Project.
 The project has a 'Node/Express' Backend with 'React' Frontend.
 The project uses 'Webpack' to bundle required files, and 'Babel' to transpile for all the browsers.
 

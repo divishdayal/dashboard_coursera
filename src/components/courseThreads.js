@@ -11,7 +11,12 @@ import {Tab, Tabs} from 'react-toolbox';
 export default class CourseThreads extends React.Component {
 	constructor(props) {
     super(props);
-
+    //threads contains all threads
+    //courseInfo contains the fields of the course
+    //isLoading is to render the loading page when website is loading
+    //index is the index of the current tab [0, 1, 2]
+    //all_threads is the unchanged list of threads. threads argument is changed according to the 
+    //tab value.
     this.state = { threads : [], courseInfo:{}, isLoading:true, index: 0, all_threads: []};
     this.handleTabChange = this.handleTabChange.bind(this);
   	}
@@ -53,7 +58,7 @@ export default class CourseThreads extends React.Component {
 	    		var threads = this.state.threads;
 	    		
 	    		var last_answered_only = threads.filter(function (entry) {
-				    return entry.lastAnsweredAt === '';
+				    return (entry.totalAnswerCount == 0);
 				});
 	    		this.setState({threads : last_answered_only.sort((a, b) => {return (b.lastAnsweredAt > b.createdAt ? b.lastAnsweredAt : b.createdAt) - (a.lastAnsweredAt > a.createdAt ? a.lastAnsweredAt : a.createdAt)})}); 
 	    	break;

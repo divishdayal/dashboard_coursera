@@ -50,7 +50,7 @@ app.get('/api/:id', function(request, response) {
     //getting thread info from database
     //getting the thread information from the database for that thread and
     //also getting the first most-recent post of that thread from that database.
-    query = 'SELECT id, threadId, answerBadge, lastAnsweredAt, createdAt, title, viewCount, totalAnswerCount FROM thread WHERE threadId IN (\'' + threadIdList.join('\', \'') + '\');';
+    query = 'SELECT id, threadId, answerBadge, lastAnsweredAt, createdAt, title, viewCount, totalAnswerCount, content FROM thread WHERE threadId IN (\'' + threadIdList.join('\', \'') + '\');';
     db.all(query, function(err,rows){
       //console.log(rows.length);
       if(err){
@@ -73,9 +73,8 @@ app.get('/api/:id', function(request, response) {
           if(row){
             ele.post = row.content; 
           }else{
-            ele.post = '';
+            ele.post = ele.content;
           }
-          console.log(count, rows_length);
           if(count == rows_length)
              response.json(rows); 
         })

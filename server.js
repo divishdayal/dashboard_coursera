@@ -90,7 +90,7 @@ app.get('/api/:id', function(request, response) {
 
 
 
-//universal routes - route to the react app
+//global routes - route to the react app
 app.get('*', function(request, response) {
   response.sendFile(__dirname + '/dist/index.html')
 });
